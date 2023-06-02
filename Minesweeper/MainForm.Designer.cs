@@ -1,7 +1,5 @@
-﻿namespace Minesweeper
-{
-    partial class MainForm
-    {
+﻿namespace Minesweeper {
+    partial class MainForm {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,16 +22,13 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
-            components = new System.ComponentModel.Container();
+        private void InitializeComponent() {
             mineGrid = new DataGridView();
             menuStrip1 = new MenuStrip();
             gameToolStripMenuItem = new ToolStripMenuItem();
             newGameToolStripMenuItem = new ToolStripMenuItem();
             saveGameToolStripMenuItem = new ToolStripMenuItem();
             loadGameToolStripMenuItem = new ToolStripMenuItem();
-            timer = new System.Windows.Forms.Timer(components);
             surrenderToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)mineGrid).BeginInit();
             menuStrip1.SuspendLayout();
@@ -85,32 +78,28 @@
             // newGameToolStripMenuItem
             // 
             newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            newGameToolStripMenuItem.Size = new Size(224, 26);
+            newGameToolStripMenuItem.Size = new Size(168, 26);
             newGameToolStripMenuItem.Text = "New Game";
             newGameToolStripMenuItem.Click += newGameToolStripMenuItem_Click;
             // 
             // saveGameToolStripMenuItem
             // 
             saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
-            saveGameToolStripMenuItem.Size = new Size(224, 26);
+            saveGameToolStripMenuItem.Size = new Size(168, 26);
             saveGameToolStripMenuItem.Text = "Save Game";
             saveGameToolStripMenuItem.Click += saveGameToolStripMenuItem_Click;
             // 
             // loadGameToolStripMenuItem
             // 
             loadGameToolStripMenuItem.Name = "loadGameToolStripMenuItem";
-            loadGameToolStripMenuItem.Size = new Size(224, 26);
+            loadGameToolStripMenuItem.Size = new Size(168, 26);
             loadGameToolStripMenuItem.Text = "Load Game";
             loadGameToolStripMenuItem.Click += loadGameToolStripMenuItem_Click;
-            // 
-            // timer
-            // 
-            timer.Tick += timer_Tick;
             // 
             // surrenderToolStripMenuItem
             // 
             surrenderToolStripMenuItem.Name = "surrenderToolStripMenuItem";
-            surrenderToolStripMenuItem.Size = new Size(224, 26);
+            surrenderToolStripMenuItem.Size = new Size(168, 26);
             surrenderToolStripMenuItem.Text = "Surrender";
             surrenderToolStripMenuItem.Click += surrenderToolStripMenuItem_Click;
             // 
@@ -144,7 +133,6 @@
         private ToolStripMenuItem newGameToolStripMenuItem;
         private ToolStripMenuItem saveGameToolStripMenuItem;
         private ToolStripMenuItem loadGameToolStripMenuItem;
-        private System.Windows.Forms.Timer timer;
         private ToolStripMenuItem surrenderToolStripMenuItem;
     }
 }

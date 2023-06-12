@@ -31,11 +31,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dima\\Desktop\\lab5\\minesweeper\\Minesweeper\\Minesweeper.csproj",
+      "projectUniqueName": "C:\\Users\\dima\\Desktop\\lab5 - Copy\\minesweeper\\Minesweeper\\Minesweeper.csproj",
       "projectName": "Minesweeper",
-      "projectPath": "C:\\Users\\dima\\Desktop\\lab5\\minesweeper\\Minesweeper\\Minesweeper.csproj",
+      "projectPath": "C:\\Users\\dima\\Desktop\\lab5 - Copy\\minesweeper\\Minesweeper\\Minesweeper.csproj",
       "packagesPath": "C:\\Users\\dima\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dima\\Desktop\\lab5\\minesweeper\\Minesweeper\\obj\\",
+      "outputPath": "C:\\Users\\dima\\Desktop\\lab5 - Copy\\minesweeper\\Minesweeper\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,8 +52,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\dima\\Desktop\\lab5\\minesweeper\\MineGrid\\MineGrid.csproj": {
-              "projectPath": "C:\\Users\\dima\\Desktop\\lab5\\minesweeper\\MineGrid\\MineGrid.csproj"
+            "C:\\Users\\dima\\Desktop\\lab5 - Copy\\minesweeper\\MineGrid\\MineGrid.csproj": {
+              "projectPath": "C:\\Users\\dima\\Desktop\\lab5 - Copy\\minesweeper\\MineGrid\\MineGrid.csproj"
             }
           }
         }

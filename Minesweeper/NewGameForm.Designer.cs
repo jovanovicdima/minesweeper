@@ -1,7 +1,5 @@
-﻿namespace Minesweeper
-{
-    partial class NewGameForm
-    {
+﻿namespace Minesweeper {
+    partial class NewGameForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +22,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewGameForm));
             easyButton = new Button();
             mediumButton = new Button();
             hardButton = new Button();
@@ -167,8 +163,9 @@
             Controls.Add(mediumButton);
             Controls.Add(easyButton);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "NewGameForm";
-            Text = "NewGameForm";
+            Text = "New Game";
             ((System.ComponentModel.ISupportInitialize)gridSizeTrackBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)numberOfMinesTrackBar).EndInit();
             ResumeLayout(false);

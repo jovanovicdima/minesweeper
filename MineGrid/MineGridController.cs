@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace MineGrid {
     static public class MineGridController {
@@ -27,7 +25,6 @@ namespace MineGrid {
                     i++;
                 }
             }
-
             return listaBombi;
         }
 
@@ -47,7 +44,6 @@ namespace MineGrid {
             }
 
             Image closedTile = Image.FromFile("Icons/closedTile.ico");
-
             for (int i = 0; i < mineGrid.ColumnCount; i++) {
                 for (int j = 0; j < mineGrid.RowCount; j++) {
                     setupIcon(mineGrid, j, i, closedTile);
@@ -71,7 +67,6 @@ namespace MineGrid {
             if (recursion && mineGrid.Rows[rowIndex].Cells[columnIndex].Tag.ToString() == "questionMark") return;
 
             int count = countBombs(mineGrid, rowIndex, columnIndex);
-
 
             switch (count) {
                 case 0:
@@ -105,8 +100,7 @@ namespace MineGrid {
 
             mineGrid.Rows[rowIndex].Cells[columnIndex].Tag = "open";
             numberOfOpenTiles++;
-            isGameWon(mineGrid);
-
+            GameWon(mineGrid);
 
             if (count != 0) return;
 
@@ -134,7 +128,6 @@ namespace MineGrid {
             if (rowIndex + 1 < mineGrid.RowCount && columnIndex - 1 >= 0) { //down-left
                 openTilesRecursive(mineGrid, rowIndex + 1, columnIndex - 1, true);
             }
-
         }
 
         static public int countBombs(DataGridView mineGrid, int rowIndex, int columnIndex) {
@@ -203,11 +196,12 @@ namespace MineGrid {
             return !lista.Find(x => x.rowIndex == rowIndex && x.columnIndex == columnIndex).Equals(default((int, int)));
         }
 
-        static public bool isGameWon(DataGridView mineGrid) {
+        static public bool GameWon(DataGridView mineGrid) {
             if (numberOfCorrectFlags == numberOfAllFlags && numberOfAllFlags == numberOfMines && numberOfOpenTiles == mineGrid.RowCount * mineGrid.ColumnCount - numberOfMines) {
                 mineGrid.Enabled = false;
+                return true;
             }
-            return true;
+            return false;
         }
 
         static public void setupIcon(DataGridView mineGrid, int rowIndex, int columnIndex, string filePath) {
@@ -293,6 +287,5 @@ namespace MineGrid {
                 }
             }
         }
-
     }
 }

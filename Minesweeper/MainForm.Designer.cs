@@ -23,6 +23,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             mineGrid = new DataGridView();
             menuStrip1 = new MenuStrip();
             gameToolStripMenuItem = new ToolStripMenuItem();
@@ -113,11 +114,13 @@
             Controls.Add(mineGrid);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
+            MinimizeBox = false;
             Name = "MainForm";
-            Text = "Form1";
+            Text = "Minesweeper";
             ((System.ComponentModel.ISupportInitialize)mineGrid).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

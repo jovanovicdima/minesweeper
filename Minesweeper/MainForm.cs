@@ -1,13 +1,9 @@
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
-using System.Xml.Serialization;
 using MineGrid;
 
 namespace Minesweeper {
     public partial class MainForm : Form {
 
         public MainForm() {
-
             InitializeComponent();
             MineGridController.newGame(mineGrid, rowCount: 9, columnCount: 9, numberOfMiness: 10);
         }
@@ -21,6 +17,7 @@ namespace Minesweeper {
                 MineGridController.openTilesRecursive(mineGrid, e.RowIndex, e.ColumnIndex, false);
             }
         }
+
         private void mineGrid_MouseClick(object sender, MouseEventArgs e) {
             if (e.Button == MouseButtons.Right) {
                 int columnIndex = mineGrid.HitTest(e.X, e.Y).ColumnIndex;
@@ -40,14 +37,12 @@ namespace Minesweeper {
                         MineGridController.numberOfCorrectFlags--;
                     }
                     MineGridController.numberOfAllFlags--;
-
                 } else if (mineGrid.Rows[rowIndex].Cells[columnIndex].Tag.ToString() == "questionMark") {
                     MineGridController.setupIcon(mineGrid, rowIndex, columnIndex, "Icons/closedTile.ico");
                     mineGrid.Rows[rowIndex].Cells[columnIndex].Tag = "closed";
                 }
-                
 
-                if(MineGridController.isGameWon(mineGrid)) {
+                if (MineGridController.GameWon(mineGrid)) {
                     MessageBox.Show("You won!", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -59,7 +54,7 @@ namespace Minesweeper {
         }
 
         private void saveGameToolStripMenuItem_Click(object sender, EventArgs e) {
-            if(!mineGrid.Enabled) {
+            if (!mineGrid.Enabled) {
                 MessageBox.Show("Ended game cannot be saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
             }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -78,6 +73,7 @@ namespace Minesweeper {
 
         private void surrenderToolStripMenuItem_Click(object sender, EventArgs e) {
             MineGridController.openAllTiles(mineGrid);
+            mineGrid.Enabled = false;
         }
     }
 }
